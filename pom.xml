@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.davidesdras.Main</mainClass>
+                            <mainClass>com.notes.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -26,9 +26,10 @@ Este projeto é um aplicativo de notas desenvolvido em Java, utilizando o padrã
    mvn exec:java -Dexec.mainClass="com.davidesdras.Main"
    ```
 
-## Autor
+## Autores
 
-David Esdras
+- David Esdras
+- Ana Letícia
 
 ---
 Este projeto é apenas para fins educacionais e demonstração de padrões de projeto em Java.
