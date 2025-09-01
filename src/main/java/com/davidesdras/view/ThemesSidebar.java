@@ -1,5 +1,5 @@
 package com.davidesdras.view;
 
-public class MainView {
+public class ThemesSidebar {
   
 }

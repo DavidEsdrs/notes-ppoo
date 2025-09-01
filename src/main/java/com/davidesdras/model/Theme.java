@@ -1,7 +1,9 @@
 package com.davidesdras.model;
 
+import com.davidesdras.view.NoteEditorPanel;
+import com.davidesdras.view.StatusBar;
+
 public interface Theme {
-    String formatTitle(String text);
-    String formatSubtitle(String text);
-    String formatBody(String text);
+    String getName();
+    void apply(NoteEditorPanel editorPanel, StatusBar statusBar);
 }

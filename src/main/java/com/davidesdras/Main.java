@@ -1,29 +1,23 @@
 package com.davidesdras;
 
-import com.davidesdras.model.Note;
-import com.davidesdras.model.NoteFactory;
-import com.davidesdras.model.factories.FinanceNoteFactory;
-import com.davidesdras.model.factories.FootballNoteFactory;
-import com.davidesdras.model.observers.CursorPositionObserver;
-import com.davidesdras.model.observers.WordCountObserver;
+import javax.swing.SwingUtilities;
+
+import com.davidesdras.controller.NoteController;
+import com.davidesdras.controller.ThemeController;
+import com.davidesdras.view.MainWindow;
 
 public class Main {
     public static void main(String[] args) {
-        NoteFactory footballFactory = new FootballNoteFactory();
-        NoteFactory financeFactory = new FinanceNoteFactory();
+        SwingUtilities.invokeLater(() -> {
+            MainWindow window = new MainWindow();
 
-        Note footballNote = footballFactory.createNote();
-        Note financeNote = financeFactory.createNote();
+            new NoteController(window.getEditorPanel(), window.getStatusBar());
+            new ThemeController(window.getThemeMenu(), window.getEditorPanel(), window.getStatusBar());
 
-        // adiciona observadores
-        footballNote.addObserver(new WordCountObserver());
-        footballNote.addObserver(new CursorPositionObserver());
+            window.setVisible(true);
+        });
+    }
 
-        // simula edição de texto
-        footballNote.setContent("Hoje vamos jogar no estádio.");
-        footballNote.setContent("Hoje vamos jogar no estádio. Gol!");
-
-        // outra nota
-        financeNote.setContent("Controle de gastos de março.");
+    public static void noop() {
     }
 }
